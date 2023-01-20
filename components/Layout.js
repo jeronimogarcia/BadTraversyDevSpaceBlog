@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "./Header";
+import Search from "./Search";
 
 const Layout = ({ title, children, description, keywords }) => {
   return (
@@ -12,6 +13,7 @@ const Layout = ({ title, children, description, keywords }) => {
       </Head>
 
       <Header />
+      <Search />
 
       <main className="container mx-auto my-7">{children}</main>
     </div>
@@ -21,7 +23,7 @@ const Layout = ({ title, children, description, keywords }) => {
 export default Layout;
 
 Layout.defaultProps = {
-  title: 'Welcome to DevSpace Blog',
-  description: 'Find the best blogs and articles',
-  keywords: 'blog, coding, programming, development'
-}
+  title: "Welcome to DevSpace Blog",
+  description: "Find the best blogs and articles",
+  keywords: "blog, coding, programming, development",
+};
