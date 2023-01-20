@@ -56,7 +56,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { category_name } }) {
-  const files = fs.readdirSync(path.join("posts"));
 
   const posts = getPosts();
 
@@ -67,11 +66,14 @@ export async function getStaticProps({ params: { category_name } }) {
   const categories = posts.map((post) => post.frontmatter.category);
 
   const uniqueCategories = [...new Set(categories)];
+  const originalCategory = uniqueCategories.filter(
+    (post) => post.toLowerCase() === category_name
+  );
 
   return {
     props: {
       posts: categoryPosts,
-      categoryName: category_name,
+      categoryName: originalCategory,
       categories: uniqueCategories,
     },
   };
