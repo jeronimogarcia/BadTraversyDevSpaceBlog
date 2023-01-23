@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import CategoryLabel from "@/components/CategoryLabel";
+import Image from 'next/image'
 import marked from "marked";
 
 const PostPage = ({
@@ -19,13 +20,15 @@ const PostPage = ({
           <h1 className="text-5xl mb-7 font-medium">{title}</h1>
           <CategoryLabel>{category}</CategoryLabel>
         </div>
-        <img src={cover_image} alt="" className="w-full rounded" />
+        <Image src={cover_image} alt="" width={1400} height={1200} className="w-full rounded" />
 
         <div className="flex justify-between items-center bg-gray-100 p-2 my-8">
           <div className="flex items-center">
-            <img
+            <Image
               src={author_image}
               alt=""
+              height={50}
+              width={50}
               className="mx-4 w-10 object-cover rounded-full hidden sm:block"
             />
             <h4 className="font-medium">{author}</h4>
