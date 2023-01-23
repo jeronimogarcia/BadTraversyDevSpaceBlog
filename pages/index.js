@@ -6,7 +6,7 @@ import Post from "@/components/Post";
 export default function HomePage({ posts }) {
   return (
     <Layout>
-      <h1 className="text-5xl border-b-4 p-5 font-bold">Lastest Articles</h1>
+      <h1 className="text-5xl border-b-4 p-5 font-bold">Latest Articles</h1>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {posts.map((post, index) => (
